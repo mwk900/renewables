@@ -166,13 +166,14 @@ export default function Projects() {
   const { ref, isVisible } = useScrollReveal(0.1);
 
   return (
-    <section id="projects" className="py-16 sm:py-24" ref={ref}>
+    <section id="projects" className="py-16 sm:py-24" ref={ref} aria-labelledby="projects-heading">
       <div className="mx-auto max-w-6xl px-6">
         <motion.p
           initial={{ opacity: 0 }}
           animate={isVisible ? { opacity: 1 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center text-sm uppercase tracking-[0.2em] text-text-muted mb-12 sm:mb-16"
+          id="projects-heading"
         >
           Portfolio
         </motion.p>

@@ -3,14 +3,8 @@
 import { motion } from 'framer-motion';
 import { useScrollReveal } from '../hooks/useScrollReveal';
 import { useAnimatedCounter, formatNumber } from '../hooks/useAnimatedCounter';
+import { stats } from '../data/content';
 import EnergyFlowLines from './EnergyFlowLines';
-
-const impactStats = [
-  { value: 847, suffix: 'MW', label: 'Installed Capacity' },
-  { value: 412, suffix: 'k tCO₂', label: 'Emissions Avoided' },
-  { value: 12, suffix: '', label: 'Counties' },
-  { value: 34, suffix: '', label: 'Projects' },
-];
 
 function ImpactNumber({
   value,
@@ -53,7 +47,7 @@ export default function Stats() {
   const { ref, isVisible } = useScrollReveal(0.2);
 
   return (
-    <section ref={ref} className="relative py-32 sm:py-44 overflow-hidden">
+    <section ref={ref} className="relative py-32 sm:py-44 overflow-hidden" aria-labelledby="stats-heading">
       {/* Energy flow lines behind */}
       <EnergyFlowLines />
 
@@ -68,12 +62,13 @@ export default function Stats() {
           animate={isVisible ? { opacity: 1 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center text-sm uppercase tracking-[0.2em] text-text-muted mb-16 sm:mb-20"
+          id="stats-heading"
         >
           Impact
         </motion.p>
 
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 sm:gap-16">
-          {impactStats.map((stat, i) => (
+          {stats.map((stat, i) => (
             <ImpactNumber
               key={stat.label}
               value={stat.value}

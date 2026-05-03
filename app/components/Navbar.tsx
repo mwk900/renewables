@@ -16,7 +16,7 @@ export default function Navbar() {
     <>
       {/* ── Floating brand stamp (top-left) ── */}
       <a
-        href="#"
+        href="#main-content"
         className={`fixed top-[4.75rem] left-1/2 z-40 -translate-x-1/2 transition-opacity duration-300 sm:top-5 sm:left-6 sm:z-50 sm:translate-x-0 ${
           scrolled ? 'opacity-100' : 'opacity-0 pointer-events-none'
         }`}
@@ -62,6 +62,7 @@ export default function Navbar() {
             strokeLinecap="round"
             strokeLinejoin="round"
             className="text-teal"
+            aria-hidden="true"
           >
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
             <path d="M22 6l-10 7L2 6" />

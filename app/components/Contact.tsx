@@ -9,13 +9,14 @@ export default function Contact() {
   const [submitted, setSubmitted] = useState(false);
 
   return (
-    <section id="contact" className="py-16 sm:py-24" ref={ref}>
+    <section id="contact" className="py-16 sm:py-24" ref={ref} aria-labelledby="contact-heading">
       <div className="mx-auto max-w-lg px-6">
         <motion.p
           initial={{ opacity: 0 }}
           animate={isVisible ? { opacity: 1 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center text-sm uppercase tracking-[0.2em] text-text-muted mb-10"
+          id="contact-heading"
         >
           Get in touch
         </motion.p>

@@ -47,15 +47,15 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
             <h4 className="text-sm font-semibold text-text-primary mb-4">Contact</h4>
-            <ul className="space-y-2.5 text-sm text-text-muted">
-              <li>14 King Street</li>
-              <li>London, EC2V 8EA</li>
-              <li className="pt-1">+44 (0)20 7946 0958</li>
-              <li>enquiries@meridian-energy.co.uk</li>
-            </ul>
+            <p className="text-sm text-text-muted leading-relaxed">
+              This is a portfolio project built by{' '}
+              <a href="https://NorthSummit.agency" target="_blank" rel="noopener noreferrer" className="text-teal hover:text-teal/80 transition-colors">
+                NorthSummit.agency
+              </a>{' '}
+              to showcase front-end development capabilities.
+            </p>
           </div>
         </div>
 
@@ -63,10 +63,12 @@ export default function Footer() {
           <p className="text-xs text-text-muted">
             &copy; {new Date().getFullYear()} Meridian Energy Solutions Ltd. All rights reserved.
           </p>
-          <div className="flex gap-6 text-xs text-text-muted">
+          <div className="flex items-center gap-6 text-xs text-text-muted">
             <a href="#" className="hover:text-teal transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-teal transition-colors">Terms of Service</a>
             <a href="#" className="hover:text-teal transition-colors">Cookie Policy</a>
+            <span className="text-text-muted/60">|</span>
+            <a href="https://NorthSummit.agency" target="_blank" rel="noopener noreferrer" className="hover:text-teal transition-colors">Designed by NorthSummit.agency - portfolio project</a>
           </div>
         </div>
       </div>

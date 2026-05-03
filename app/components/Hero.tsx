@@ -228,7 +228,7 @@ export default function Hero() {
   const mouse = useMouseParallax();
 
   return (
-    <section className="hero-section relative h-screen flex flex-col items-center justify-center overflow-hidden">
+    <section className="hero-section relative h-screen flex flex-col items-center justify-center overflow-hidden" aria-label="Meridian Energy Solutions hero">
       {/* Offshore windfarm scene */}
       <OffshoreScene mouseX={mouse.normalizedX} mouseY={mouse.normalizedY} />
 

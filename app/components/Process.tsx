@@ -8,13 +8,14 @@ export default function Process() {
   const { ref, isVisible } = useScrollReveal();
 
   return (
-    <section id="process" className="py-24 sm:py-32" ref={ref}>
+    <section id="process" className="py-24 sm:py-32" ref={ref} aria-labelledby="process-heading">
       <div className="mx-auto max-w-7xl px-6">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
           className="max-w-2xl mb-16"
+          id="process-heading"
         >
           <p className="text-teal text-sm font-semibold tracking-wide uppercase mb-3">How We Work</p>
           <h2 className="font-heading text-3xl sm:text-4xl text-text-primary">

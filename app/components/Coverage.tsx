@@ -43,13 +43,14 @@ export default function Coverage() {
   };
 
   return (
-    <section id="coverage" className="py-16 sm:py-24" ref={ref}>
+    <section id="coverage" className="py-16 sm:py-24" ref={ref} aria-labelledby="coverage-heading">
       <div className="mx-auto max-w-5xl px-6">
         <motion.p
           initial={{ opacity: 0 }}
           animate={isVisible ? { opacity: 1 } : {}}
           transition={{ duration: 0.6 }}
           className="text-center text-sm uppercase tracking-[0.2em] text-text-muted mb-12 sm:mb-16"
+          id="coverage-heading"
         >
           Coverage
         </motion.p>
@@ -121,6 +122,9 @@ export default function Coverage() {
                   key={country.id}
                   d={countryPaths[country.id]}
                   className={`coverage-country${hoveredCountry === country.id ? ' coverage-country-active' : ''}`}
+                  role="button"
+                  tabIndex={0}
+                  aria-label={`${country.name}: ${country.projects.length} projects, ${country.totalCapacity}`}
                   onMouseEnter={() => setHoveredCountry(country.id)}
                   onMouseLeave={() => setHoveredCountry(null)}
                   onClick={() =>
@@ -128,6 +132,14 @@ export default function Coverage() {
                       hoveredCountry === country.id ? null : country.id,
                     )
                   }
+                  onKeyDown={(e) => {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                      e.preventDefault();
+                      setHoveredCountry(
+                        hoveredCountry === country.id ? null : country.id,
+                      );
+                    }
+                  }}
                 />
               ))}
 

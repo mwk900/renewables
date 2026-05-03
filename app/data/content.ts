@@ -1,16 +1,7 @@
-export interface TrustReview {
-  id: number;
-  quote: string;
-  author: string;
-  role: string;
-  initials: string;
-}
-
 export interface Stat {
   label: string;
   value: number;
   suffix: string;
-  prefix?: string;
 }
 
 export interface Service {
@@ -45,16 +36,6 @@ export interface TimelineStep {
   description: string;
 }
 
-export interface CoverageMarker {
-  id: number;
-  county: string;
-  technology: string;
-  output: string;
-  status: string;
-  x: number;
-  y: number;
-}
-
 export interface CountryProject {
   name: string;
   technology: string;
@@ -69,58 +50,12 @@ export interface UKCountry {
   totalCapacity: string;
 }
 
-/* ── Trust Panel reviews (hero right-side cycling) ── */
-export const trustReviews: TrustReview[] = [
-  {
-    id: 1,
-    quote: 'Meridian delivered our 48MW solar park three weeks ahead of programme. Outstanding project management from feasibility to energisation.',
-    author: 'James Harworth',
-    role: 'Director of Infrastructure, Lincs CC',
-    initials: 'JH',
-  },
-  {
-    id: 2,
-    quote: 'We\'ve deployed £140m across their portfolio. IRRs consistently outperform base-case. First-class diligence pack every time.',
-    author: 'Sarah Whitfield',
-    role: 'Investment Director, Octopus Renewables',
-    initials: 'SW',
-  },
-  {
-    id: 3,
-    quote: 'Planning granted on first submission. Their environmental assessments are the most thorough I\'ve reviewed in 15 years.',
-    author: 'David Keane',
-    role: 'Senior Planning Officer, NYCC',
-    initials: 'DK',
-  },
-  {
-    id: 4,
-    quote: 'Grid connection secured six months early. Meridian understand DNO processes better than most operators I work with.',
-    author: 'Rachel Osman',
-    role: 'Connections Manager, Northern Powergrid',
-    initials: 'RO',
-  },
-  {
-    id: 5,
-    quote: 'Our family has leased 120 acres to Meridian. Professional, transparent, and the rent reviews are always honoured on time.',
-    author: 'Tom Ashcroft',
-    role: 'Landowner, East Midlands',
-    initials: 'TA',
-  },
-  {
-    id: 6,
-    quote: 'Commissioning ran like clockwork. The BESS system was at full capacity within 48 hours of grid connection. Exceptional EPC coordination.',
-    author: 'Neil Patterson',
-    role: 'Lead Engineer, Siemens Gamesa',
-    initials: 'NP',
-  },
-];
-
 /* ── Live Stats ── */
 export const stats: Stat[] = [
-  { label: 'MW Installed Capacity', value: 847, suffix: ' MW' },
-  { label: 'Projects Delivered', value: 34, suffix: '' },
-  { label: 'tCO₂ Avoided', value: 412000, suffix: ' tCO₂' },
-  { label: 'Counties Across UK', value: 12, suffix: '' },
+  { label: 'Installed Capacity', value: 847, suffix: 'MW' },
+  { label: 'Emissions Avoided', value: 412, suffix: 'k tCO₂' },
+  { label: 'Counties', value: 12, suffix: '' },
+  { label: 'Projects', value: 34, suffix: '' },
 ];
 
 /* ── Services ── */
@@ -279,55 +214,6 @@ export const testimonials: Testimonial[] = [
     author: 'Dr. Liam Osborne',
     role: 'Principal Ecologist',
     company: 'Natural England',
-  },
-];
-
-/* ── Coverage Map Markers ── */
-export const coverageMarkers: CoverageMarker[] = [
-  {
-    id: 1,
-    county: 'Lincolnshire',
-    technology: 'Solar',
-    output: '48 MW',
-    status: 'Operational',
-    x: 62,
-    y: 55,
-  },
-  {
-    id: 2,
-    county: 'Northumberland',
-    technology: 'Onshore Wind',
-    output: '62 MW',
-    status: 'Operational',
-    x: 50,
-    y: 25,
-  },
-  {
-    id: 3,
-    county: 'Yorkshire',
-    technology: 'Solar + BESS',
-    output: '75 MW',
-    status: 'Construction',
-    x: 55,
-    y: 42,
-  },
-  {
-    id: 4,
-    county: 'West Midlands',
-    technology: 'BESS',
-    output: '80 MWh',
-    status: 'Operational',
-    x: 48,
-    y: 58,
-  },
-  {
-    id: 5,
-    county: 'Cornwall',
-    technology: 'Onshore Wind',
-    output: '28 MW',
-    status: 'Planning',
-    x: 28,
-    y: 85,
   },
 ];
 
